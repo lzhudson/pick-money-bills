@@ -10,4 +10,5 @@ export const defaultTheme = {
   'red-500': '#FF0000',
 
   caecillia: 'Caecillia LT',
+  openSans: 'Open Sans',
 }
