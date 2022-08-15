@@ -27,47 +27,50 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;
   }
+  button {
+    cursor: pointer;
+  }
 
-@font-face {
-  font-family: 'Caecillia LT';
-  src: url(${CaecilliaLtStd45Light}) format('opentype');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Caecillia LT';
-  src: url(${CaecilliaLtStd46LightItalic}) format('opentype');
-  font-weight: 300;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Caecillia LT';
-  src: url(${CaecilliaLtStd75Bold}) format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Caecillia LT';
-  src: url(${CaecilliaLtStd76BoldItalic}) format('opentype');
-  font-weight: 700;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Open Sans';
-  src: url(${OpenSansRegular}) format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Open Sans';
-  src: url(${OpenSansBold}) format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Open Sans';
-  src: url(${OpenSansBoldItalic}) format('truetype');
-  font-weight: 700;
-  font-style: italic;
-}
+  @font-face {
+    font-family: 'Caecillia LT';
+    src: url(${CaecilliaLtStd45Light}) format('opentype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Caecillia LT';
+    src: url(${CaecilliaLtStd46LightItalic}) format('opentype');
+    font-weight: 300;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Caecillia LT';
+    src: url(${CaecilliaLtStd75Bold}) format('opentype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Caecillia LT';
+    src: url(${CaecilliaLtStd76BoldItalic}) format('opentype');
+    font-weight: 700;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url(${OpenSansRegular}) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url(${OpenSansBold}) format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url(${OpenSansBoldItalic}) format('truetype');
+    font-weight: 700;
+    font-style: italic;
+  }
 `
