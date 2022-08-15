@@ -8,4 +8,7 @@ export const defaultTheme = {
   'green-700': '#007A41',
 
   'red-500': '#FF0000',
+
+  caecillia: 'Caecillia LT',
+  openSans: 'Open Sans',
 }
