@@ -33,5 +33,6 @@ export const Button = styled.button<IButtonProps>`
   @media (max-width: 425px) {
     height: 38px;
     font-size: 1rem;
+    line-height: 0px;
   }
 `
