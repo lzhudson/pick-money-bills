@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { ContentLoginContainer } from './styles'
 
 export function ContentLogin() {
@@ -8,7 +9,7 @@ export function ContentLogin() {
         Para acessar a 2ª via do seu boleto, realize o login.
         <br /> <br />
         Caso não possua uma senha de acesso, você pode solicitá-la{' '}
-        <a href=""> clicando aqui</a>.
+        <NavLink to="/solicitar-senha"> clicando aqui</NavLink>.
       </p>
     </ContentLoginContainer>
   )
