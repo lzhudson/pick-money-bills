@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 interface IButtonProps {
-  variant: 'primary' | 'secondary'
+  variant: 'primary' | 'secondary' | 'outline-dark'
 }
 
 export const Button = styled.button<IButtonProps>`
@@ -28,6 +28,18 @@ export const Button = styled.button<IButtonProps>`
       transition: background-color 0.2s;
       &:hover {
         background-color: ${(props) => props.theme['gray-500']};
+      }
+    `}
+  ${(props) =>
+    props.variant === 'outline-dark' &&
+    css`
+      background-color: transparent;
+      border: 1px solid ${(props) => props.theme['gray-500']};
+      color: ${(props) => props.theme['gray-900']};
+      transition: all 0.2s;
+      &:hover {
+        background-color: ${(props) => props.theme['gray-900']};
+        color: ${(props) => props.theme.white};
       }
     `}
   @media (max-width: 425px) {
