@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const RequestPasswordContainer = styled.form`
+export const RequestPasswordContainer = styled.div`
   margin-top: 2.5rem;
   @media (max-width: 425px) {
     margin-top: 4.05rem;
