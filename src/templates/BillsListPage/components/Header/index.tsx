@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Button } from '../../../../components/Button'
 import {
   HeaderContainer,
@@ -17,7 +18,9 @@ export function Header() {
           </p>
         </UserInfo>
         <LogoutContainer>
-          <Button variant="outline-dark">Encerrar sessão</Button>
+          <Button variant="outline-dark">
+            <Link to="/">Encerrar sessão</Link>
+          </Button>
         </LogoutContainer>
       </HeaderContentContainer>
     </HeaderContainer>
