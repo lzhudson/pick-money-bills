@@ -9,7 +9,7 @@ import { ButtonsContainer, LoginFormContainer } from './styles'
 export function LoginForm() {
   return (
     <LoginFormContainer>
-      <form action="">
+      <div>
         <InputGroup>
           <Label htmlFor="document-number">CPF/CNPJ</Label>
           <InputMasked
@@ -33,7 +33,7 @@ export function LoginForm() {
             <Link to="/solicitar-senha">Solicitar senha</Link>
           </Button>
         </ButtonsContainer>
-      </form>
+      </div>
     </LoginFormContainer>
   )
 }
