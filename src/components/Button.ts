@@ -47,4 +47,8 @@ export const Button = styled.button<IButtonProps>`
     font-size: 1rem;
     line-height: 0px;
   }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Button } from '../../../../components/Button'
 import { InputGroup } from '../../../../components/InputGroup'
 import { InputMasked } from '../../../../components/InputMasked'
@@ -12,7 +13,7 @@ export function RequestPasswordForm() {
         <InputMasked mask={'999.999.999-99'} placeholder="000.000.000-00  " />
       </InputGroup>
       <Button variant="primary" type="submit">
-        Solicitar Senha
+        <Link to="/senha-enviada">Solicitar Senha</Link>
       </Button>
     </RequestPasswordContainer>
   )

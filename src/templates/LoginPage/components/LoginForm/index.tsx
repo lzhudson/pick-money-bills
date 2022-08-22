@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Button } from '../../../../components/Button'
 import { Input } from '../../../../components/Input'
 import { InputGroup } from '../../../../components/InputGroup'
@@ -21,14 +22,16 @@ export function LoginForm() {
           <Label htmlFor="password">Senha</Label>
           <Input type="password" id="password" placeholder="Senha" />
         </InputGroup>
-        <a className="link-lost-password" href="">
+        <Link className="link-lost-password" to="/esqueceu-sua-senha">
           Esqueceu a senha?
-        </a>
+        </Link>
         <ButtonsContainer>
           <Button type="submit" variant="primary">
-            Acessar
+            <Link to="/lista-de-boletos">Acessar</Link>
           </Button>
-          <Button variant="secondary">Solicitar senha</Button>
+          <Button variant="secondary">
+            <Link to="/solicitar-senha">Solicitar senha</Link>
+          </Button>
         </ButtonsContainer>
       </form>
     </LoginFormContainer>
