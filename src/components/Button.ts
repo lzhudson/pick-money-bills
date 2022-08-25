@@ -50,5 +50,11 @@ export const Button = styled.button<IButtonProps>`
   a {
     text-decoration: none;
     color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `
