@@ -31,7 +31,7 @@ export const ContentLoginContainer = styled.div`
     color: ${(props) => props.theme['gray-900']};
     margin-top: 157px;
     @media (max-width: 425px) {
-      margin-top: 2rem;
+      margin-top: 11px;
     }
   }
 
