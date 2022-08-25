@@ -4,7 +4,7 @@ export const ContentLoginContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-right: 1px solid ${(props) => props.theme['gray-900']};
-  padding-right: 83px;
+  padding-right: 50px;
   @media (max-width: 768px) {
     border-right: 0px;
     padding-right: 0px;
