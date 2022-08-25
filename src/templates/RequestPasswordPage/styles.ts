@@ -14,7 +14,7 @@ export const RequestPasswordContentBox = styled.div`
   width: 550px;
   height: 550px;
   padding: 81px 105px 126px 105px;
-  @media (max-width: 425px) {
+  @media (max-width: 576px) {
     padding: 37px;
     height: 100%;
   }

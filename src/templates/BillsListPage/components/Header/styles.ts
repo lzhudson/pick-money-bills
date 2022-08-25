@@ -21,7 +21,7 @@ export const HeaderContentContainer = styled.div`
   justify-content: space-between;
   padding: 22px 10px;
   align-items: center;
-  @media (max-width: 425px) {
+  @media (max-width: 576px) {
     flex-direction: column;
     align-items: flex-start;
     padding: 30px 42px;
@@ -38,13 +38,13 @@ export const UserInfo = styled.div`
 `
 
 export const LogoutContainer = styled.div`
-  @media (max-width: 425px) {
+  @media (max-width: 576px) {
     width: 100%;
     margin-top: 36px;
   }
   button {
     width: 230px;
-    @media (max-width: 425px) {
+    @media (max-width: 576px) {
       width: 100%;
     }
   }

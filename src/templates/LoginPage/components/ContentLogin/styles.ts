@@ -17,7 +17,7 @@ export const ContentLoginContainer = styled.div`
     line-height: 60px;
     color: ${(props) => props.theme['green-700']};
     max-width: 220px;
-    @media (max-width: 425px) {
+    @media (max-width: 576px) {
       font-size: 26px;
     }
   }
@@ -30,7 +30,7 @@ export const ContentLoginContainer = styled.div`
     line-height: 29px;
     color: ${(props) => props.theme['gray-900']};
     margin-top: 157px;
-    @media (max-width: 425px) {
+    @media (max-width: 576px) {
       margin-top: 2rem;
     }
   }
