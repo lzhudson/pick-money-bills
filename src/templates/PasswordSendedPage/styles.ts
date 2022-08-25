@@ -15,7 +15,7 @@ export const PasswordSendedContentBox = styled.div`
   width: 550px;
   height: 550px;
   padding: 81px 80px 126px 80px;
-  @media (max-width: 425px) {
+  @media (max-width: 576px) {
     padding: 37px;
     height: 100%;
   }

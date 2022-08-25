@@ -42,7 +42,7 @@ export const Button = styled.button<IButtonProps>`
         color: ${(props) => props.theme.white};
       }
     `}
-  @media (max-width: 425px) {
+  @media (max-width: 576px) {
     height: 38px;
     font-size: 1rem;
     line-height: 0px;
@@ -50,5 +50,11 @@ export const Button = styled.button<IButtonProps>`
   a {
     text-decoration: none;
     color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `

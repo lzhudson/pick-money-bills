@@ -6,7 +6,7 @@ export const PasswordSendedContentContainer = styled.div`
     font-size: 30px;
     text-align: center;
     color: ${(props) => props.theme['green-700']};
-    @media (max-width: 425px) {
+    @media (max-width: 576px) {
       text-align: left;
       font-size: 26px;
     }
@@ -31,7 +31,7 @@ export const PasswordSendedContentContainer = styled.div`
         text-decoration: underline;
       }
     }
-    @media (max-width: 425px) {
+    @media (max-width: 576px) {
       text-align: left;
       font-size: 14px;
     }
