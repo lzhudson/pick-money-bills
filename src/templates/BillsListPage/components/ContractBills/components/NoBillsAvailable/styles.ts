@@ -17,6 +17,9 @@ export const NoBillsAvailableContainer = styled.div`
     font-size: 22px;
 
     color: ${(props) => props.theme['red-500']};
+    @media (max-width: 576px) {
+      font-size: 14px;
+    }
   }
 
   p {
@@ -24,5 +27,8 @@ export const NoBillsAvailableContainer = styled.div`
     font-size: 20px;
     line-height: 32px;
     color: ${(props) => props.theme['gray-900']};
+    @media (max-width: 576px) {
+      font-size: 14px;
+    }
   }
 `

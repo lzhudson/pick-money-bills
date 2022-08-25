@@ -2,6 +2,80 @@ import styled from 'styled-components'
 
 export const ContractBillsItemContainer = styled.li`
   margin-top: 50px;
+
+  .custom-table {
+    margin-top: 20px;
+    .only-desktop {
+      display: block;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    .only-mobile {
+      display: none;
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+    &__columns,
+    &__row {
+      display: grid;
+      grid-template-columns: 220px 235px 335px 270px;
+      @media (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      span {
+        font-family: ${(props) => props.theme.openSans};
+        font-weight: 700;
+        font-size: 1rem;
+        color: ${(props) => props.theme['green-700']};
+        margin-left: 20px;
+        @media (max-width: 375px) {
+          font-size: 12px;
+        }
+      }
+    }
+    &__columns {
+      margin-bottom: 14px;
+    }
+    &__row {
+      background-color: #f9f9f9;
+      align-items: center;
+      margin-top: 10px;
+      span {
+        font-family: ${(props) => props.theme.openSans};
+        font-weight: 400;
+        font-size: 1rem;
+        color: #221e20;
+        @media (max-width: 768px) {
+          padding: 20px 20px 20px 0px;
+        }
+        @media (max-width: 375px) {
+          font-size: 14px;
+        }
+        &:last-child {
+          margin-left: 0px;
+          @media (max-width: 768px) {
+            margin-left: 20px;
+            padding: 0px 20px 20px 0px;
+            grid-column: span 3;
+          }
+        }
+        button {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          padding: 0 29px;
+          justify-content: center;
+          gap: 1rem;
+        }
+      }
+    }
+  }
 `
 
 export const ContractBillsNumber = styled.strong`
