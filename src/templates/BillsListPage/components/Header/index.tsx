@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Button } from '../../../../components/Button'
+import { useAuth } from '../../../../hooks/auth'
 import {
   HeaderContainer,
   HeaderContentContainer,
@@ -8,6 +9,12 @@ import {
 } from './styles'
 
 export function Header() {
+  const { signOut } = useAuth()
+  const navigate = useNavigate()
+  function handleSignOut() {
+    signOut()
+    navigate('/')
+  }
   return (
     <HeaderContainer>
       <HeaderContentContainer>
@@ -18,8 +25,8 @@ export function Header() {
           </p>
         </UserInfo>
         <LogoutContainer>
-          <Button variant="outline-dark">
-            <Link to="/">Encerrar sessão</Link>
+          <Button variant="outline-dark" onClick={handleSignOut}>
+            Encerrar sessão
           </Button>
         </LogoutContainer>
       </HeaderContentContainer>

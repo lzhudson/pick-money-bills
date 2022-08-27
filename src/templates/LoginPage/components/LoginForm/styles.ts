@@ -6,7 +6,7 @@ export const LoginFormContainer = styled.div`
     padding-left: 0px;
     width: 100%;
   }
-  div {
+  form {
     display: flex;
     flex-direction: column;
     .link-lost-password {

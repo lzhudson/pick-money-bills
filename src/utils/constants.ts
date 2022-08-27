@@ -1,0 +1,3 @@
+export const MINUTES_IN_MILLISECONDS = {
+  FIFTEEN: 900000,
+}
