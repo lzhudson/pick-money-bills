@@ -1,10 +1,4 @@
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from 'react'
+import { createContext, ReactNode, useContext, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import { ApiResponseDTO } from '../@types/api'
 import { ISignInCredentials } from '../@types/auth'
@@ -19,6 +13,7 @@ interface AuthContextData {
   generateToken: () => Promise<string>
   signIn: (credentias: ISignInCredentials) => Promise<void>
   signOut: () => void
+  checkUserIsLogged: () => void
   isAuthenticated: boolean
   userLogged: string | null
 }
@@ -54,7 +49,6 @@ function AuthProvider({ children }: AuthProviderProps) {
   }
   async function signIn({ documentNumber, password }: ISignInCredentials) {
     const token = await generateToken()
-    console.log(token)
     const CPFOrCNPJWithoutMask = documentNumber.replace(/\D/g, '')
     const response = (await api.post(
       'AreaRestrita/Login/Ccb',
@@ -69,7 +63,6 @@ function AuthProvider({ children }: AuthProviderProps) {
       },
     )) as ApiResponseDTO
     const { data } = response
-    console.log(data)
     setCookies('@pick-money-bills-user', data, {
       maxAge: generateTimeToExpireToken(),
       path: '/',
@@ -91,17 +84,23 @@ function AuthProvider({ children }: AuthProviderProps) {
     }
   }
 
-  useEffect(() => {
-    if (checkTokenIsValid()) {
-      console.log('logged')
+  function checkUserIsLogged() {
+    const tokenIsValid = checkTokenIsValid()
+    if (tokenIsValid) {
       setUserLogged(cookies['@pick-money-bills-user'])
-      console.log(userLogged)
     }
-  }, [])
+  }
 
   return (
     <AuthContext.Provider
-      value={{ generateToken, signIn, isAuthenticated, userLogged, signOut }}
+      value={{
+        generateToken,
+        signIn,
+        isAuthenticated,
+        userLogged,
+        signOut,
+        checkUserIsLogged,
+      }}
     >
       {children}
     </AuthContext.Provider>
