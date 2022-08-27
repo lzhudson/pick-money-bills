@@ -14,7 +14,6 @@ export function ContractBillsItem({
   noItems,
   noAvailable,
 }: ContractBillsItemProps) {
-  console.log(noItems, noAvailable)
   return (
     <ContractBillsItemContainer>
       <ContractBillsNumber>CCB: 0000000/0</ContractBillsNumber>
