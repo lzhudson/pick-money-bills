@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 interface IButtonProps {
   variant: 'primary' | 'secondary' | 'outline-dark'
+  loading?: boolean
 }
 
 export const Button = styled.button<IButtonProps>`
@@ -11,6 +12,33 @@ export const Button = styled.button<IButtonProps>`
   font-weight: 700;
   font-size: 18px;
   color: ${(props) => props.theme.white};
+  ${(props) =>
+    props.loading &&
+    css`
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      svg {
+        animation: spin 1s infinite linear;
+      }
+    `}
+
+  ${(props) =>
+    props.disabled &&
+    css`
+      opacity: 0.5;
+      cursor: not-allowed;
+    `}
+
   ${(props) =>
     props.variant === 'primary' &&
     css`
