@@ -23,35 +23,36 @@ export function ContractBillsItem({
   return (
     <ContractBillsItemContainer>
       {bill?.Ccb && <ContractBillsNumber>CCB: {bill?.Ccb}</ContractBillsNumber>}
-
       {bill?.error ? (
         <NoBills message={bill?.menssagem} />
       ) : (
-        <div className="custom-table">
-          <div className="custom-table__columns">
-            <span>Mês</span>
-            <span>Valor</span>
-            <span className="only-desktop">Data de Vencimento</span>
-            <span className="only-mobile">Vencimento</span>
-            <span></span>
+        bill.map((bill: any, index: number) => (
+          <div className="custom-table" key={index}>
+            <div className="custom-table__columns">
+              <span>Mês</span>
+              <span>Valor</span>
+              <span className="only-desktop">Data de Vencimento</span>
+              <span className="only-mobile">Vencimento</span>
+              <span></span>
+            </div>
+            <div className="custom-table__row">
+              <span>{getMonthAndYearFromDate(bill?.DataVencimento)}</span>
+              <span>R$ {bill?.ValorParcela}</span>
+              <span>
+                {bill?.DataVencimento
+                  ? `${convertDateToFormatPtBr(bill?.DataVencimento)}`
+                  : ''}
+              </span>
+              <span>
+                <Button variant="primary">
+                  <a href={bill?.Link} target="_blank" rel="noreferrer">
+                    <img src={downloadIcon} alt="Download" /> 2ª via do boleto
+                  </a>
+                </Button>
+              </span>
+            </div>
           </div>
-          <div className="custom-table__row">
-            <span>{getMonthAndYearFromDate(bill.DataVencimento)}</span>
-            <span>R$ {bill?.ValorParcela}</span>
-            <span>
-              {bill?.DataVencimento
-                ? `${convertDateToFormatPtBr(bill.DataVencimento)}`
-                : ''}
-            </span>
-            <span>
-              <Button variant="primary">
-                <a href={bill?.Link} target="_blank" rel="noreferrer">
-                  <img src={downloadIcon} alt="Download" /> 2ª via do boleto
-                </a>
-              </Button>
-            </span>
-          </div>
-        </div>
+        ))
       )}
     </ContractBillsItemContainer>
   )

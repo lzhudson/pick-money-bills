@@ -15,7 +15,7 @@ export function ContractBills() {
             <strong>Contrato:</strong>
             <span>{contractList.codigo}</span>
           </ContractBillsNumberContainer>
-          <BillsList Boleto={contractList.Boleto[0]} />
+          <BillsList Boleto={contractList.Boleto} />
           <Separator />
         </>
       ))}
