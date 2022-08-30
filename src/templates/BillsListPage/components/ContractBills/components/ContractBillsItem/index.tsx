@@ -37,7 +37,7 @@ export function ContractBillsItem({
           </div>
           <div className="custom-table__row">
             <span>{getMonthAndYearFromDate(bill?.DataVencimento)}</span>
-            <span>{convertStringToCurrencyPtBr(bill?.ValorParcela)}</span>
+            <span>R$ {bill?.ValorParcela}</span>
             <span>{convertDateToFormatPtBr(bill?.DataVencimento)}</span>
             <span>
               <Button variant="primary">
