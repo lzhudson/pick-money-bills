@@ -14,3 +14,17 @@ export function formatDocumentNumber(documentNumber: number) {
   }
   return documentNumberFormatted
 }
+
+export function convertDateToFormatPtBr(date: string) {
+  return new Intl.DateTimeFormat('pt-BR', { timeZone: 'UTC' }).format(
+    new Date(date),
+  )
+}
+
+export function convertStringToCurrencyPtBr(value: string) {
+  const convertStringToNumber = Number(value.replace(',', '.'))
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(convertStringToNumber)
+}
