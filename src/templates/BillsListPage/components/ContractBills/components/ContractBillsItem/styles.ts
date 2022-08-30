@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ContractBillsItemContainer = styled.li`
-  margin-top: 50px;
+  margin-top: 20px;
 
   .custom-table {
     margin-top: 20px;
@@ -69,9 +69,12 @@ export const ContractBillsItemContainer = styled.li`
           display: flex;
           align-items: center;
           font-size: 14px;
-          padding: 0 29px;
           justify-content: center;
-          gap: 1rem;
+          a {
+            display: flex;
+            gap: 1rem;
+            padding: 0 29px;
+          }
         }
       }
     }
@@ -79,11 +82,12 @@ export const ContractBillsItemContainer = styled.li`
 `
 
 export const ContractBillsNumber = styled.strong`
+  display: block;
   font-family: ${(props) => props.theme.openSans};
   font-size: 20px;
   color: ${(props) => props.theme['gray-900']};
+  margin-top: 50px;
 `
-
 export const TableContainer = styled.div`
   margin-top: 20px;
   table {

@@ -11,15 +11,15 @@ import {
 import { useLayoutEffect } from 'react'
 
 export function LoginPage() {
-  const { isAuthenticated } = useAuth()
+  const { checkUserIsLogged, isAuthenticated } = useAuth()
   const navigate = useNavigate()
 
   useLayoutEffect(() => {
+    checkUserIsLogged()
     if (isAuthenticated) {
-      console.log(isAuthenticated)
       navigate('/lista-de-boletos')
     }
-  }, [])
+  })
 
   return (
     <LoginPageContainer>

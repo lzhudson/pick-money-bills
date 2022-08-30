@@ -1,9 +1,13 @@
 import { NoBillsContainer } from './styles'
 
-export function NoBills() {
+interface INoBillsProps {
+  message: string
+}
+
+export function NoBills({ message }: INoBillsProps) {
   return (
     <NoBillsContainer>
-      <p>Este contrato não possui boletos em aberto.</p>
+      <p>{message}</p>
     </NoBillsContainer>
   )
 }

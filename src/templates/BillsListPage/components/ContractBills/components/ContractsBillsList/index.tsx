@@ -1,12 +1,14 @@
 import { ContractBillsItem } from '../ContractBillsItem'
 import { ContractBillsListContainer } from './styles'
 
-export function ContractsBillsList() {
+interface IBillsListProps {
+  Boleto: any
+}
+
+export function BillsList({ Boleto }: IBillsListProps) {
   return (
     <ContractBillsListContainer>
-      <ContractBillsItem />
-      <ContractBillsItem noItems />
-      <ContractBillsItem noAvailable />
+      <ContractBillsItem bill={Boleto} />
     </ContractBillsListContainer>
   )
 }
