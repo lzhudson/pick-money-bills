@@ -2,24 +2,31 @@ import { Button } from '../../../../../../components/Button'
 import { ContractBillsItemContainer, ContractBillsNumber } from './styles'
 
 import downloadIcon from '../../../../../../assets/icon/download-icon.svg'
+import {
+  convertDateToFormatPtBr,
+  convertStringToCurrencyPtBr,
+} from '../../../../../../utils/format'
+import { getMonthAndYearFromDate } from '../../../../../../utils/date'
 import { NoBills } from '../NoBills'
-import { NoBillsAvailable } from '../NoBillsAvailable'
 
 interface ContractBillsItemProps {
   noItems?: boolean
   noAvailable?: boolean
+  bill: any
 }
 
 export function ContractBillsItem({
   noItems,
   noAvailable,
+  bill,
 }: ContractBillsItemProps) {
   return (
     <ContractBillsItemContainer>
-      <ContractBillsNumber>CCB: 0000000/0</ContractBillsNumber>
-      {noItems && !noAvailable && <NoBills />}
-      {noAvailable && !noItems && <NoBillsAvailable />}
-      {!noItems && !noAvailable && (
+      {bill?.Ccb && <ContractBillsNumber>CCB: {bill?.Ccb}</ContractBillsNumber>}
+
+      {bill?.error ? (
+        <NoBills message={bill?.menssagem} />
+      ) : (
         <div className="custom-table">
           <div className="custom-table__columns">
             <span>Mês</span>
@@ -29,32 +36,14 @@ export function ContractBillsItem({
             <span></span>
           </div>
           <div className="custom-table__row">
-            <span>03/2022</span>
-            <span>R$ XXXX,XX</span>
-            <span>08/04/2022</span>
+            <span>{getMonthAndYearFromDate(bill?.DataVencimento)}</span>
+            <span>{convertStringToCurrencyPtBr(bill?.ValorParcela)}</span>
+            <span>{convertDateToFormatPtBr(bill?.DataVencimento)}</span>
             <span>
               <Button variant="primary">
-                <img src={downloadIcon} alt="" /> 2ª via do boleto
-              </Button>
-            </span>
-          </div>
-          <div className="custom-table__row">
-            <span>03/2022</span>
-            <span>R$ XXXX,XX</span>
-            <span>08/04/2022</span>
-            <span>
-              <Button variant="primary">
-                <img src={downloadIcon} alt="" /> 2ª via do boleto
-              </Button>
-            </span>
-          </div>
-          <div className="custom-table__row">
-            <span>03/2022</span>
-            <span>R$ XXXX,XX</span>
-            <span>08/04/2022</span>
-            <span>
-              <Button variant="primary">
-                <img src={downloadIcon} alt="" /> 2ª via do boleto
+                <a href={bill} target="_blank" rel="noreferrer">
+                  <img src={downloadIcon} alt="Download" /> 2ª via do boleto
+                </a>
               </Button>
             </span>
           </div>
