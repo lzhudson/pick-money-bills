@@ -36,12 +36,16 @@ export function ContractBillsItem({
             <span></span>
           </div>
           <div className="custom-table__row">
-            <span>{getMonthAndYearFromDate(bill?.DataVencimento)}</span>
+            <span>{getMonthAndYearFromDate(bill.DataVencimento)}</span>
             <span>R$ {bill?.ValorParcela}</span>
-            <span>{convertDateToFormatPtBr(bill?.DataVencimento)}</span>
+            <span>
+              {bill?.DataVencimento
+                ? `${convertDateToFormatPtBr(bill.DataVencimento)}`
+                : ''}
+            </span>
             <span>
               <Button variant="primary">
-                <a href={bill} target="_blank" rel="noreferrer">
+                <a href={bill?.Link} target="_blank" rel="noreferrer">
                   <img src={downloadIcon} alt="Download" /> 2ª via do boleto
                 </a>
               </Button>
