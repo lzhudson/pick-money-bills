@@ -6,13 +6,13 @@ import { GlobalStyle } from '../../styles/global'
 import { defaultTheme } from '../../styles/themes/default'
 export function App() {
   return (
-    <AuthProvider>
-      <ThemeProvider theme={defaultTheme}>
-        <BrowserRouter>
+    <ThemeProvider theme={defaultTheme}>
+      <BrowserRouter>
+        <AuthProvider>
           <Router />
-        </BrowserRouter>
-        <GlobalStyle />
-      </ThemeProvider>
-    </AuthProvider>
+        </AuthProvider>
+      </BrowserRouter>
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }

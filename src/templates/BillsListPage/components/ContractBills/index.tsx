@@ -1,17 +1,16 @@
-import { useCookies } from 'react-cookie'
 import { Separator } from '../../../../components/Separator'
+import { useAuth } from '../../../../hooks/auth'
 import { BillsList } from './components/ContractsBillsList'
 import { ContractBillsNumberContainer } from './styles'
 
 export function ContractBills() {
-  const [cookies] = useCookies()
-  const user = cookies['@pick-money-bills-user']
-  const contracts = user.contratos
+  const { user } = useAuth()
+  const contracts = user?.contratos
   return (
     <>
       {contracts.map((contractList: any, index: any) => (
         <>
-          <ContractBillsNumberContainer key={index}>
+          <ContractBillsNumberContainer key={contractList.contrato}>
             <strong>Contrato:</strong>
             <span>{contractList.codigo}</span>
           </ContractBillsNumberContainer>
