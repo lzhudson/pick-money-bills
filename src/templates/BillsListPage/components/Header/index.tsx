@@ -1,4 +1,3 @@
-import { useCookies } from 'react-cookie'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../../../../components/Button'
 import { useAuth } from '../../../../hooks/auth'
@@ -11,20 +10,18 @@ import {
 } from './styles'
 
 export function Header() {
-  const { signOut } = useAuth()
-  const [cookies] = useCookies()
-  const user = cookies['@pick-money-bills-user']
+  const { signOut, user } = useAuth()
   const navigate = useNavigate()
   function handleSignOut() {
     signOut()
     navigate('/')
   }
-  const documentFormatted = formatDocumentNumber(user.CpfCnpj)
+  const documentFormatted = user?.CpfCnpj && formatDocumentNumber(user.CpfCnpj)
   return (
     <HeaderContainer>
       <HeaderContentContainer>
         <UserInfo>
-          <h1>{user.NomeCliente}</h1>
+          <h1>{user?.NomeCliente}</h1>
           <p>
             CPF/CNPJ: <strong>{documentFormatted}</strong>
           </p>
