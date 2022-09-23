@@ -20,7 +20,7 @@ const validationSchema = yup.object().shape({
     .test('documentNumber', 'CPF/CNPJ Inválido', (value) => {
       const CPFWithoutLastDigit = value?.replace('_', '')
       const CPFOrCNPJRegex =
-        /(^\d{3}\.\d{3}\.\d{3}-\d{2}$)|(^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$)/
+        /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/
       const isCPFOrCNPJ = CPFOrCNPJRegex.test(CPFWithoutLastDigit || '')
       return isCPFOrCNPJ
     }),
