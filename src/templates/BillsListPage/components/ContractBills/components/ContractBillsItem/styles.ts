@@ -32,7 +32,7 @@ export const ContractBillsItemContainer = styled.li`
         font-weight: 700;
         font-size: 1rem;
         color: ${(props) => props.theme['green-700']};
-        margin-left: 20px;
+        margin-left: 15px;
         @media (max-width: 375px) {
           font-size: 12px;
         }
@@ -51,7 +51,7 @@ export const ContractBillsItemContainer = styled.li`
         font-size: 1rem;
         color: #221e20;
         @media (max-width: 768px) {
-          padding: 20px 20px 20px 0px;
+          padding: 20px 15px 20px 0px;
         }
         @media (max-width: 375px) {
           font-size: 14px;
@@ -59,8 +59,8 @@ export const ContractBillsItemContainer = styled.li`
         &:last-child {
           margin-left: 0px;
           @media (max-width: 768px) {
-            margin-left: 20px;
-            padding: 0px 20px 20px 0px;
+            margin-left: 15px;
+            padding: 0px 15px 20px 0px;
             grid-column: span 3;
           }
         }

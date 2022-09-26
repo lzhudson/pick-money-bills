@@ -21,7 +21,7 @@ export const ContentLoginContainer = styled.div`
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 36px;
     margin: 0;
     padding: 30px 37px;
   }
