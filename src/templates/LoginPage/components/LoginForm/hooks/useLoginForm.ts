@@ -40,7 +40,8 @@ export function useLoginForm() {
     password,
   }) => {
     try {
-      await signIn({ documentNumber, password })
+      const passwordInBase64 = btoa(unescape(encodeURIComponent(password)))
+      await signIn({ documentNumber, password: passwordInBase64 })
       toast.success('Seja bem-vindo', {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 2000,
