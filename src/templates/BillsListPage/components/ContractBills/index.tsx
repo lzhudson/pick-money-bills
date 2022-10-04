@@ -11,7 +11,7 @@ export function ContractBills() {
       {contracts.map((contractList: any, index: any) => (
         <>
           <ContractBillsNumberContainer key={contractList.contrato}>
-            <strong>CBB:</strong>
+            <strong>CCB:</strong>
             <span>{contractList.codigo}</span>
           </ContractBillsNumberContainer>
           <BillsList Boleto={contractList.Boleto} />
