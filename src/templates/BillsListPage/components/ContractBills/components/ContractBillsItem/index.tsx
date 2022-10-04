@@ -29,14 +29,14 @@ export function ContractBillsItem({
         bill.map((bill: any, index: number) => (
           <div className="custom-table" key={index}>
             <div className="custom-table__columns">
-              <span>Mês</span>
+              {/* <span>Mês</span> */}
               <span>Valor</span>
               <span className="only-desktop">Data de Vencimento</span>
               <span className="only-mobile">Vencimento</span>
               <span></span>
             </div>
             <div className="custom-table__row">
-              <span>{getMonthAndYearFromDate(bill?.DataVencimento)}</span>
+              {/* <span>{getMonthAndYearFromDate(bill?.DataVencimento)}</span> */}
               <span>R$ {bill?.ValorParcela}</span>
               <span>
                 {bill?.DataVencimento
