@@ -7,6 +7,16 @@ export const LostPasswordContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .link-back {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    button {
+      width: 100%;
+    }
+  }
 `
 
 export const LostPasswordContentBox = styled.div`
