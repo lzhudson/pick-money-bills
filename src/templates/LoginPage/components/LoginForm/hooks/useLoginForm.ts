@@ -18,7 +18,10 @@ const validationSchema = yup.object().shape({
     .string()
     .required('Obrigatório')
     .test('documentNumber', 'CPF/CNPJ Inválido', (value) => {
-      const CPFWithoutLastDigit = value?.replace('_', '')
+      let CPFWithoutLastDigit = value?.replace('_', '')
+      if (CPFWithoutLastDigit?.length === 10) {
+        CPFWithoutLastDigit = `0${CPFWithoutLastDigit}`
+      }
       const CPFOrCNPJRegex =
         /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/
       const isCPFOrCNPJ = CPFOrCNPJRegex.test(CPFWithoutLastDigit || '')
