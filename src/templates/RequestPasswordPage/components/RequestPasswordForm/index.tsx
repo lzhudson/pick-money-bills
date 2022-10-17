@@ -6,6 +6,7 @@ import { useRequestPasswordForm } from '../../hooks'
 import { RequestPasswordContainer } from './styles'
 import { ImSpinner10 } from 'react-icons/im'
 import { Input } from '../../../../components/Input'
+import { AlertMessage } from '../../../../components/AlertMessage'
 export function RequestPasswordForm() {
   const { onSubmit, errors, isLoading, register } = useRequestPasswordForm()
   return (
@@ -21,6 +22,7 @@ export function RequestPasswordForm() {
           {...register('documentNumber')}
         />
       </InputGroup>
+      <AlertMessage>{errors.documentNumber?.message}</AlertMessage>
       <Button
         loading={isLoading}
         disabled={isLoading}

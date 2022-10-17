@@ -1,4 +1,5 @@
 import { ImSpinner10 } from 'react-icons/im'
+import { AlertMessage } from '../../../../components/AlertMessage'
 import { Button } from '../../../../components/Button'
 import { Input } from '../../../../components/Input'
 import { InputGroup } from '../../../../components/InputGroup'
@@ -21,6 +22,7 @@ export function LostPasswordForm() {
           placeholder="CPF/CNPJ"
           {...register('documentNumber')}
         />
+        <AlertMessage>{errors.documentNumber?.message}</AlertMessage>
       </InputGroup>
       <Button
         loading={isLoading}
