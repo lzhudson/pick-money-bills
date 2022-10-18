@@ -8,8 +8,8 @@ export const NoBillsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   @media (max-width: 576px) {
     padding: 25px 36px;
   }
