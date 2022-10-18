@@ -20,8 +20,7 @@ export const ContractBillsItemContainer = styled.li`
     &__columns,
     &__row {
       display: grid;
-      width: fit-content;
-      grid-template-columns: 220px 235px 335px;
+      grid-template-columns: 220px 235px 270px 335px;
       @media (max-width: 1024px) {
         width: 100%;
         grid-template-columns: 1fr 1fr 1fr;
