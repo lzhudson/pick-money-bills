@@ -107,8 +107,8 @@ export const TableContainer = styled.div`
       font-weight: 700;
       font-size: 16px;
       color: ${(props) => props.theme['green-700']};
-      padding-left: 30px;
-      padding-bottom: 30px;
+      padding-left: 20px;
+      padding-bottom: 20px;
     }
     td {
       padding-top: 20px;
