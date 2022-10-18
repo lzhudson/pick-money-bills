@@ -43,6 +43,7 @@ export function ContractBillsItem({
                   ? `${convertDateToFormatPtBr(bill?.DataVencimento)}`
                   : ''}
               </span>
+              <span></span>
               <span>
                 <Button variant="primary">
                   <a href={bill?.Link} target="_blank" rel="noreferrer">
