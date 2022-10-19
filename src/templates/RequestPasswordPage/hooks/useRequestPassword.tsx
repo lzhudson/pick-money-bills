@@ -6,7 +6,7 @@ function useRequestPassword() {
   async function requestPassword(documentNumber: string) {
     const CPFOrCNPJWithoutMask = documentNumber.replace(/\D/g, '')
     try {
-      await api.get(`/ccb/AlterarSenha/${CPFOrCNPJWithoutMask}`)
+      await api.post(`/ccb/AlterarSenha/${CPFOrCNPJWithoutMask}`)
     } catch (error) {
       const err = error as AxiosError
       const message = err.response?.data
