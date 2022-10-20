@@ -7,6 +7,7 @@ import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import { AxiosError } from 'axios'
 import { useRequestPassword } from './useRequestPassword'
+import { api } from '../../../services/api'
 
 type RequestFormData = {
   documentNumber: string
@@ -40,11 +41,13 @@ export function useRequestPasswordForm() {
   const onSubmit: SubmitHandler<RequestFormData> = async ({
     documentNumber,
   }) => {
+    const CPFOrCNPJWithoutMask = documentNumber.replace(/\D/g, '')
     try {
-      await requestPassword(documentNumber)
+      await api.get(`/cc/SemSenha/${CPFOrCNPJWithoutMask}`)
       navigate('/senha-enviada')
     } catch (error) {
       const err = error as AxiosError
+      console.log(error)
       const message = err.response?.data
       toast.error(`${message}`, {
         position: toast.POSITION.TOP_CENTER,

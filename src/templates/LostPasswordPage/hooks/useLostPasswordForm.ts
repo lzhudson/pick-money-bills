@@ -7,6 +7,7 @@ import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import { AxiosError } from 'axios'
 import { useLostPassword } from './useLostPassword'
+import { api } from '../../../services/api'
 
 type LostFormData = {
   documentNumber: string
@@ -38,8 +39,9 @@ export function useLostPasswordForm() {
     })
   const { errors } = formState
   const onSubmit: SubmitHandler<LostFormData> = async ({ documentNumber }) => {
+    const CPFOrCNPJWithoutMask = documentNumber.replace(/\D/g, '')
     try {
-      await lostPassword(documentNumber)
+      await api.get(`/cc/SemSenha/${CPFOrCNPJWithoutMask}`)
       navigate('/senha-enviada')
     } catch (error) {
       const err = error as AxiosError

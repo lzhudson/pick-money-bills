@@ -1,4 +1,5 @@
 import { ImSpinner10 } from 'react-icons/im'
+import { ToastContainer } from 'react-toastify'
 import { AlertMessage } from '../../../../components/AlertMessage'
 import { Button } from '../../../../components/Button'
 import { Input } from '../../../../components/Input'
@@ -33,6 +34,7 @@ export function LostPasswordForm() {
         {isLoading && <ImSpinner10 />}
         {!isLoading && 'Enviar'}
       </Button>
+      <ToastContainer />
     </LostPasswordContainer>
   )
 }
