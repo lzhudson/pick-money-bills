@@ -4,7 +4,7 @@ export const NoBillsContainer = styled.div`
   margin-top: 20px;
   display: flex;
   background: #f9f9f9;
-  height: 170px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;

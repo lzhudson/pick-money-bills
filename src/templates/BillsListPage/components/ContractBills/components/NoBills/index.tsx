@@ -5,9 +5,13 @@ interface INoBillsProps {
 }
 
 export function NoBills({ message }: INoBillsProps) {
+  function createMarkup() {
+    return {__html: message};
+  }
+
   return (
     <NoBillsContainer>
-      <p>{message}</p>
+      <p dangerouslySetInnerHTML={createMarkup()} />
     </NoBillsContainer>
   )
 }
